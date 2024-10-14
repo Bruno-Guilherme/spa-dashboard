@@ -1,4 +1,5 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
+import { ErrorPage } from "../pages";
 
 function Dashboard() {
   return (
@@ -17,7 +18,7 @@ export const routers = createBrowserRouter([
   {
     path: "/",
     element: <div>Olá Mundo!</div>,
-    errorElement: <div>Erro!</div>,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/about",
