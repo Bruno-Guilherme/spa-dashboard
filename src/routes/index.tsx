@@ -1,5 +1,6 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import { ErrorPage } from "../pages";
+import { Button } from "@mui/material";
 
 function Dashboard() {
   return (
@@ -17,7 +18,7 @@ function Dashboard() {
 export const routers = createBrowserRouter([
   {
     path: "/",
-    element: <div>Olá Mundo!</div>,
+    element: <Button>Olá Mundo!</Button>,
     errorElement: <ErrorPage />,
   },
   {
