@@ -1,6 +1,7 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import { ErrorPage } from "../pages";
 import { Button } from "@mui/material";
+import { useAppThemeContext } from "../shared/contexts";
 
 function Dashboard() {
   return (
@@ -15,10 +16,21 @@ function Dashboard() {
   );
 }
 
+// Mover o hook para dentro do componente funcional
+function HomePage() {
+  const { toggleTheme } = useAppThemeContext();
+
+  return (
+    <Button variant="contained" onClick={toggleTheme}>
+      Olá Mundo!
+    </Button>
+  );
+}
+
 export const routers = createBrowserRouter([
   {
     path: "/",
-    element: <Button>Olá Mundo!</Button>,
+    element: <HomePage />, // Agora usando o componente funcional HomePage
     errorElement: <ErrorPage />,
   },
   {
