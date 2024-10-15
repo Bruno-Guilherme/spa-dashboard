@@ -2,6 +2,7 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import { ErrorPage } from "../pages";
 import { Button } from "@mui/material";
 import { useAppThemeContext } from "../shared/contexts";
+import { MenuLateral } from "../shared/components";
 
 function Dashboard() {
   return (
@@ -30,8 +31,9 @@ function HomePage() {
 export const routers = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />, // Agora usando o componente funcional HomePage
+    element: <MenuLateral />, // Agora usando o componente funcional HomePage
     errorElement: <ErrorPage />,
+    children: [{ path: "", element: <HomePage /> }],
   },
   {
     path: "/about",

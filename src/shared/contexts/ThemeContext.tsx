@@ -37,10 +37,13 @@ export const AppThemeProvider = ({ children }: IThemeProviderProps) => {
     <ThemeContext.Provider value={{ themeName, toggleTheme }}>
       <ThemeProvider theme={theme}>
         <Container
+          disableGutters
           sx={{
             width: "100vw",
             height: "100vh",
             bgcolor: theme.palette.background.default,
+            padding: 0,
+            magin: 0,
           }}
         >
           {children}
